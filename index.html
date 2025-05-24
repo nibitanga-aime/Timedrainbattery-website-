@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="rw">
 <head>
+  <meta name="description" content="Check battery percentage and estimate shutdown time with Battery Life Checker. Get alerts when low battery hits 15%. Works offline too.">
+<meta name="keywords" content="Battery, battery timer, battery checker, battery life, power status, shutdown time, battery alert">
+<meta name="author" content="Nibitanga Aime">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Battery Life Checker</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <meta name="theme-color" content="#1e3c72"/>
+  <link rel="manifest" href="manifest.json">
+  
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -48,6 +53,14 @@
   </audio>
 
   <script>
+    
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('Service Worker registered:', reg.scope))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    });
+  }
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
