@@ -1,33 +1,29 @@
-# Timedrain Battery Website
+# Time Drain Battery
 
-A simple web app that estimates how long your phone battery will last based on usage.
+**Time Drain Battery** is a lightweight web application that calculates and predicts how long your phone battery will last. It gives you a clear alert when your battery level drops to 15%. It works offline and is optimized for mobile users.
 
 ## Features
 
-- Enter how much battery you used and how long it took
-- Enter your current battery percentage
-- See estimated time remaining
-- Animated battery bar
-- Buzzer alert and sound if battery is 15% or less
+- Estimate shutdown time based on current battery percentage
+- Animated buzzer + sound alert at 15% battery
+- Works offline using a service worker
+- Simple, clean UI for mobile and desktop
+- Open source and easy to improve
 
 ## Live Demo
 
-Visit the live website here:  
-[https://nibitanga-aime.github.io/Timedrainbattery-website-/](https://nibitanga-aime.github.io/Timedrainbattery-website-/)
+- [Visit on Netlify](https://timedrainbattery.netlify.app)
+- [View on GitHub Pages](https://nibitanga-aime.github.io/Timedrainbattery-website-/)
 
-## How to Use
+## How It Works
 
-1. Enter battery usage data (e.g. 10% used in 30 minutes)
-2. Enter your current battery level
-3. Click the button to calculate remaining time
+- The app uses the `navigator.getBattery()` API to read your device's battery info
+- It estimates time left based on current power level
+- When battery hits 15%, it triggers a sound and visual alert
+- Thanks to the service worker, you can use it without internet once it's loaded
 
-## Tech Used
+## Installation (Offline or Local)
 
-- HTML5
-- CSS3 (with animation)
-- JavaScript
-- Audio API (for buzzer)
-
-## Author
-
-Nibitanga Aime
+1. Clone this repository:
+```bash
+git clone https://github.com/nibitanga-aime/Timedrainbattery-website-.git
